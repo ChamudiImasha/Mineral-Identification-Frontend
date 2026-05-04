@@ -8,7 +8,6 @@ import "./MineralClassification.css";
 export default function MineralClassification() {
   const [results, setResults] = useState<any>(null);
   const [loading, setLoading] = useState(false);
-  const [showUploadDialog, setShowUploadDialog] = useState(false);
   const [error, setError] = useState<any>(null);
 
   const handleImageUpload = async (file: File) => {
@@ -95,37 +94,6 @@ export default function MineralClassification() {
 
           {/* Main Content Grid */}
           <div className="mineral-grid">
-            {/* Upload Button - compact */}
-            <div
-              style={{
-                gridColumn: "1 / -1",
-                marginBottom: 12,
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <button
-                onClick={() => setShowUploadDialog(true)}
-                className="upload-trigger-button"
-                disabled={loading}
-              >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  style={{ width: 24, height: 24, marginRight: 8 }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                  />
-                </svg>
-                {loading ? "Processing..." : "Upload Mineral Image"}
-              </button>
-            </div>
-
             {/* Error Display */}
             {error && (
               <div
@@ -164,7 +132,21 @@ export default function MineralClassification() {
               </div>
             )}
 
-            {/* Planet globe (right, larger) */}
+            <div className="mineral-card">
+              <div className="mineral-card-header">
+                <h2>Image Upload</h2>
+              </div>
+              <ImageUploader onImageUpload={handleImageUpload} loading={loading} />
+            </div>
+
+            <div className="mineral-card">
+              <div className="mineral-card-header">
+                <h2>Classification Results</h2>
+              </div>
+              <ResultDetailsPanel results={results} loading={loading} />
+            </div>
+
+            {/* Planet globe full-width below upload/results */}
             <div
               className="mineral-card"
               style={{ minHeight: 640, gridColumn: "1 / -1" }}
@@ -185,50 +167,9 @@ export default function MineralClassification() {
                 />
               </div>
             </div>
-
-            {/* Result details full-width below globe */}
-            <div
-              className="mineral-card"
-              style={{ gridColumn: "1 / -1", marginTop: 12 }}
-            >
-              <ResultDetailsPanel results={results} loading={loading} />
-            </div>
           </div>
         </div>
       </div>
-
-      {/* Upload Dialog Modal */}
-      {showUploadDialog && (
-        <div
-          className="upload-modal-overlay"
-          onClick={() => setShowUploadDialog(false)}
-        >
-          <div
-            className="upload-modal-content"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="upload-modal-header">
-              <h2>Upload Mineral Image</h2>
-              <button
-                onClick={() => setShowUploadDialog(false)}
-                className="upload-modal-close"
-                aria-label="Close"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="upload-modal-body">
-              <ImageUploader
-                onImageUpload={(file) => {
-                  handleImageUpload(file);
-                  setShowUploadDialog(false);
-                }}
-                loading={loading}
-              />
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
