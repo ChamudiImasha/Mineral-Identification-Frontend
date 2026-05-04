@@ -194,7 +194,7 @@ export default function PlanetMineralGlobe({
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 100);
-    camera.position.set(0, 0, 3.6);
+    camera.position.set(0, 0, 3.2);
     camRef.current = camera;
 
     const pivot = new THREE.Group();
@@ -1001,7 +1001,8 @@ export default function PlanetMineralGlobe({
         {/* BOTTOM PANEL */}
         <aside
           style={{
-            flex: "0 0 42%",
+            flex: "0 0 48%",
+            minHeight: 260,
             background: C.panel,
             borderTop: `1px solid ${C.border}`,
             display: "flex",
@@ -1012,6 +1013,9 @@ export default function PlanetMineralGlobe({
           {/* Inspector */}
           <div
             style={{
+              flex: "0 0 auto",
+              maxHeight: "46%",
+              overflowY: "auto",
               padding: "18px 20px 16px",
               borderBottom: `1px solid ${C.border}`,
             }}
@@ -1236,7 +1240,9 @@ export default function PlanetMineralGlobe({
           </div>
 
           {/* Breakdown list */}
-          <div style={{ flex: 1, overflowY: "auto", padding: "14px 20px" }}>
+          <div
+            style={{ flex: 1, minHeight: 140, overflowY: "auto", padding: "14px 20px" }}
+          >
             <div
               style={{
                 fontSize: 7.5,
