@@ -123,6 +123,26 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
+.upload-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.compact-globe-card {
+  padding: 1.2rem;
+}
+
+.compact-globe-shell {
+  height: 360px;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.results-column {
+  height: fit-content;
+}
+
 .mineral-card-header {
   display: flex;
   align-items: center;
@@ -252,6 +272,10 @@
     padding: 1.5rem;
   }
 
+  .compact-globe-shell {
+    height: 320px;
+  }
+
   .info-card {
     padding: 1rem;
   }
@@ -291,6 +315,10 @@
 
   .mineral-grid {
     gap: 1.5rem;
+  }
+
+  .compact-globe-shell {
+    height: 280px;
   }
 }
 

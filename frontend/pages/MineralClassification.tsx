@@ -132,40 +132,41 @@ export default function MineralClassification() {
               </div>
             )}
 
-            <div className="mineral-card">
-              <div className="mineral-card-header">
-                <h2>Image Upload</h2>
+            <div className="upload-column">
+              <div className="mineral-card">
+                <div className="mineral-card-header">
+                  <h2>Image Upload</h2>
+                </div>
+                <ImageUploader onImageUpload={handleImageUpload} loading={loading} />
               </div>
-              <ImageUploader onImageUpload={handleImageUpload} loading={loading} />
+
+              <div className="mineral-card compact-globe-card">
+                <div className="mineral-card-header">
+                  <h2>Planet View</h2>
+                </div>
+                <div className="compact-globe-shell">
+                  <PlanetMineralGlobe
+                    results={
+                      Array.isArray(results)
+                        ? results
+                        : (results?.statistics?.class_distribution ??
+                          results?.class_distribution ??
+                          null)
+                    }
+                    onResults={(data: any) => {
+                      setResults(data);
+                    }}
+                    onUploadState={(b: boolean) => setLoading(b)}
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="mineral-card">
+            <div className="mineral-card results-column">
               <div className="mineral-card-header">
                 <h2>Classification Results</h2>
               </div>
               <ResultDetailsPanel results={results} loading={loading} />
-            </div>
-
-            {/* Planet globe full-width below upload/results */}
-            <div
-              className="mineral-card"
-              style={{ minHeight: 640, gridColumn: "1 / -1" }}
-            >
-              <div style={{ width: "100%", height: "100%" }}>
-                <PlanetMineralGlobe
-                  results={
-                    Array.isArray(results)
-                      ? results
-                      : (results?.statistics?.class_distribution ??
-                        results?.class_distribution ??
-                        null)
-                  }
-                  onResults={(data: any) => {
-                    setResults(data);
-                  }}
-                  onUploadState={(b: boolean) => setLoading(b)}
-                />
-              </div>
             </div>
           </div>
         </div>

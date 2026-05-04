@@ -14,8 +14,6 @@ const Home = () => {
       <div className="star-field star-field-near" />
       <div className="star-field star-field-mid" />
       <div className="star-field star-field-far" />
-      <div className="planet planet-one" />
-      <div className="planet planet-two" />
       <div className="nebula nebula-left" />
       <div className="nebula nebula-right" />
 

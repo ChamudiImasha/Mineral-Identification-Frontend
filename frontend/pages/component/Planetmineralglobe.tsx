@@ -616,7 +616,7 @@ export default function PlanetMineralGlobe({
       <div
         style={{
           width: "100%",
-          height: "100vh",
+          height: "100%",
           background: C.bg,
           display: "flex",
           alignItems: "center",
@@ -645,7 +645,7 @@ export default function PlanetMineralGlobe({
     <div
       style={{
         width: "100%",
-        height: "100vh",
+        height: "100%",
         background: C.bg,
         display: "flex",
         flexDirection: "column",
