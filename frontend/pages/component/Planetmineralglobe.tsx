@@ -698,11 +698,18 @@ export default function PlanetMineralGlobe({
       </header>
 
       {/* BODY */}
-      <div style={{ flex: 1, display: "flex", overflow: "hidden" }}>
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
+        }}
+      >
         {/* Globe */}
         <div
           ref={containerRef}
-          style={{ flex: "0 0 55%", position: "relative" }}
+          style={{ flex: "1 1 auto", minHeight: 0, position: "relative" }}
         >
           <div
             ref={mountRef}
@@ -991,12 +998,12 @@ export default function PlanetMineralGlobe({
           </div>
         </div>
 
-        {/* RIGHT PANEL */}
+        {/* BOTTOM PANEL */}
         <aside
           style={{
-            flex: "1",
+            flex: "0 0 42%",
             background: C.panel,
-            borderLeft: `1px solid ${C.border}`,
+            borderTop: `1px solid ${C.border}`,
             display: "flex",
             flexDirection: "column",
             overflow: "hidden",
