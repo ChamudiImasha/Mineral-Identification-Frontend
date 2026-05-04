@@ -1015,7 +1015,7 @@ export default function PlanetMineralGlobe({
             style={{
               flex: "0 0 auto",
               maxHeight: "46%",
-              overflowY: "auto",
+              overflowY: "hidden",
               padding: "18px 20px 16px",
               borderBottom: `1px solid ${C.border}`,
             }}
@@ -1241,7 +1241,7 @@ export default function PlanetMineralGlobe({
 
           {/* Breakdown list */}
           <div
-            style={{ flex: 1, minHeight: 140, overflowY: "auto", padding: "14px 20px" }}
+            style={{ flex: 1, minHeight: 140, overflowY: "hidden", padding: "14px 20px" }}
           >
             <div
               style={{

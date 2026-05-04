@@ -86,7 +86,7 @@ export default function MineralClassification() {
           <div className="mineral-header">
             <div className="mineral-header-content">
               <div className="mineral-header-text">
-                <h1>Mineral Classification</h1>
+                <h1>HYPERSPECTRA</h1>
                 <p>AI-powered CRISM hyperspectral mineral analysis</p>
               </div>
             </div>
@@ -140,33 +140,33 @@ export default function MineralClassification() {
                 <ImageUploader onImageUpload={handleImageUpload} loading={loading} />
               </div>
 
-              <div className="mineral-card compact-globe-card">
+              <div className="mineral-card results-column">
                 <div className="mineral-card-header">
-                  <h2>Planet View</h2>
+                  <h2>Classification Results</h2>
                 </div>
-                <div className="compact-globe-shell">
-                  <PlanetMineralGlobe
-                    results={
-                      Array.isArray(results)
-                        ? results
-                        : (results?.statistics?.class_distribution ??
-                          results?.class_distribution ??
-                          null)
-                    }
-                    onResults={(data: any) => {
-                      setResults(data);
-                    }}
-                    onUploadState={(b: boolean) => setLoading(b)}
-                  />
-                </div>
+                <ResultDetailsPanel results={results} loading={loading} />
               </div>
             </div>
 
-            <div className="mineral-card results-column">
+            <div className="mineral-card compact-globe-card">
               <div className="mineral-card-header">
-                <h2>Classification Results</h2>
+                <h2>Planet View</h2>
               </div>
-              <ResultDetailsPanel results={results} loading={loading} />
+              <div className="compact-globe-shell">
+                <PlanetMineralGlobe
+                  results={
+                    Array.isArray(results)
+                      ? results
+                      : (results?.statistics?.class_distribution ??
+                        results?.class_distribution ??
+                        null)
+                  }
+                  onResults={(data: any) => {
+                    setResults(data);
+                  }}
+                  onUploadState={(b: boolean) => setLoading(b)}
+                />
+              </div>
             </div>
           </div>
         </div>

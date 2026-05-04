@@ -131,10 +131,14 @@
 
 .compact-globe-card {
   padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .compact-globe-shell {
-  height: 760px;
+  flex: 1;
+  min-height: 760px;
   border-radius: 1rem;
   overflow: hidden;
 }
