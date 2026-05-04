@@ -1,13 +1,11 @@
 import "./Header.css";
-import logo from "../../src/assets/logo.png";
 
 const Header = () => {
   return (
     <nav className="header-nav">
       <div className="header-container">
         <a href="/" className="header-logo">
-          <img src={logo} className="logo-img" alt="ExoSynergy Logo" />
-          <span className="logo-text">ExoSynergy</span>
+          HYPERSPECTRA
         </a>
 
         <button className="mobile-menu-btn" type="button">
@@ -31,14 +29,8 @@ const Header = () => {
           <ul className="nav-list">
             {/* <li><a href="/" className="nav-link active">Home</a></li> */}
             <li>
-              <a href="/simulation" className="nav-link">
-                Simulation
-              </a>
-            </li>
-
-            <li>
-              <a href="/login" className="nav-link">
-                Log in
+              <a href="/mineralClassification" className="nav-link">
+                Get Started
               </a>
             </li>
           </ul>

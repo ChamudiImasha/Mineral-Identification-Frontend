@@ -20,19 +20,19 @@ const Home = () => {
       <div className="nebula nebula-right" />
 
       <section className="hero-content">
-        <p className="eyebrow">AI + Planetary Spectroscopy</p>
-        <h1>Discover Mineral Signatures Across Alien Worlds</h1>
+        <p className="eyebrow">Precision AI for Planetary Data</p>
+        <h1>Turn Spectral Imagery into Confident Mineral Insights</h1>
         <p className="hero-description">
-          ExoSynergy combines machine learning with astrophysics workflows to
-          classify minerals from hyperspectral imagery and surface composition
-          clues. Explore simulation tools, analyze spectral responses, and
-          accelerate planetary discovery.
+          HYPERSPECTRA blends machine learning and planetary science workflows
+          to detect mineral signatures from hyperspectral inputs in seconds.
+          Upload your data, visualize patterns, and extract decision-ready
+          results for exploration and research.
         </p>
 
         <div className="hero-highlights">
-          <span>Hyperspectral Classification</span>
-          <span>Interactive Planet Visualization</span>
-          <span>Research-Ready Workflow</span>
+          <span>Fast Mineral Detection</span>
+          <span>Immersive Spectral Visualization</span>
+          <span>Built for Research Teams</span>
         </div>
 
         <button className="button-85" onClick={handleGetStarted}>

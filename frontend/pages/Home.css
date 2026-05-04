@@ -13,11 +13,35 @@
 .space-gradient {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 15%, #2a1f5e 0%, transparent 40%),
-    radial-gradient(circle at 80% 22%, #244079 0%, transparent 42%),
-    radial-gradient(circle at 50% 78%, #0d1b3f 0%, transparent 50%),
-    linear-gradient(145deg, #030711 0%, #090f20 48%, #111d36 100%);
+  background-image: radial-gradient(
+      circle at 20% 15%,
+      rgba(42, 31, 94, 0.5) 0%,
+      transparent 40%
+    ),
+    radial-gradient(circle at 80% 22%, rgba(36, 64, 121, 0.45) 0%, transparent 42%),
+    linear-gradient(145deg, rgba(3, 7, 17, 0.8) 0%, rgba(9, 15, 32, 0.72) 48%, rgba(17, 29, 54, 0.75) 100%),
+    url("../src/assets/wp2562160-stars-wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: homeBgPulse 16s ease-in-out infinite;
   z-index: 0;
+}
+
+.space-gradient::after {
+  content: "";
+  position: absolute;
+  inset: -12%;
+  background: radial-gradient(
+      circle at 30% 30%,
+      rgba(132, 180, 255, 0.2),
+      transparent 45%
+    ),
+    radial-gradient(circle at 70% 65%, rgba(84, 145, 255, 0.16), transparent 48%);
+  filter: blur(26px);
+  opacity: 0.45;
+  animation: homeAuroraDrift 22s ease-in-out infinite alternate;
+  pointer-events: none;
 }
 
 .star-field {
@@ -236,6 +260,25 @@
   }
   to {
     transform: translateY(-120px);
+  }
+}
+
+@keyframes homeBgPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes homeAuroraDrift {
+  0% {
+    transform: translate3d(-2%, 0, 0);
+  }
+  100% {
+    transform: translate3d(2%, -2%, 0);
   }
 }
 

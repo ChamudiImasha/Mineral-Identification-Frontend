@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Header from "../pages/component/Header";
-import Simulation from "../pages/Simulation";
-import Login from "../pages/Login";
 import ExoDetect from "../pages/ExoDetection";
 import ExtraMineral from "../pages/ExtraMineral";
 import AtmosProfile from "../pages/AtmosProfile";
@@ -17,8 +15,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/simulation" element={<Simulation />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/exoplanetDetection" element={<ExoDetect />} />
         <Route path="/extraMineral" element={<ExtraMineral />} />
         <Route path="/atmosphereProfile" element={<AtmosProfile />} />
