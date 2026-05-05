@@ -194,7 +194,7 @@ export default function PlanetMineralGlobe({
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(52, W / H, 0.1, 100);
-    camera.position.set(0, 0, 5.05);
+    camera.position.set(0, 0, 5.05 / 2);
     camRef.current = camera;
 
     const pivot = new THREE.Group();
