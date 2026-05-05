@@ -5,7 +5,7 @@
 .upload-area {
   position: relative;
   border: 2px dashed rgba(100, 35, 180, 0.35);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 2rem;
   transition: all 0.3s ease;
   background: rgba(10, 15, 31, 0.4);
@@ -37,7 +37,7 @@
 
 .preview-image-wrapper {
   position: relative;
-  border-radius: 8px;
+  border-radius: 0;
   overflow: hidden;
   margin-bottom: 1rem;
 }
@@ -55,7 +55,7 @@
   background: linear-gradient(135deg, #6b3fc1 0%, #2563c9 100%);
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 0;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
@@ -85,7 +85,7 @@
 .upload-icon {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 0;
   background: rgba(100, 35, 180, 0.18);
   display: flex;
   align-items: center;

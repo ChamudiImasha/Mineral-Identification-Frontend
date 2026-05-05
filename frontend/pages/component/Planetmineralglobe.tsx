@@ -670,7 +670,7 @@ export default function PlanetMineralGlobe({
         {/* <div style={{ display:"flex", gap:16, alignItems:"center" }}>
           {file && (
             <div style={{ fontSize:9.5, color:C.textMid, fontFamily:C.mono,
-              background:C.accentDim, padding:"4px 10px", borderRadius:4,
+              background:C.accentDim, padding:"4px 10px", borderRadius:0,
               border:`1px solid ${C.border}` }}>
               ◉ {file}
             </div>
@@ -678,7 +678,7 @@ export default function PlanetMineralGlobe({
           <label style={{
             padding:"6px 16px", border:`1px solid rgba(61,139,255,0.3)`,
             color:C.accent, fontSize:10, letterSpacing:2, cursor:"pointer",
-            background:"rgba(61,139,255,0.06)", borderRadius:4,
+            background:"rgba(61,139,255,0.06)", borderRadius:0,
             textTransform:"uppercase", fontFamily:C.mono,
           }}>
             ↑ Upload Image
@@ -820,7 +820,7 @@ export default function PlanetMineralGlobe({
                 border: `1px solid ${hovered.color}33`,
                 borderLeft: `2px solid ${hovered.color}`,
                 padding: "14px 18px",
-                borderRadius: 6,
+                borderRadius: 0,
                 pointerEvents: "none",
                 zIndex: 20,
                 boxShadow: `0 12px 48px rgba(0,0,0,0.7), 0 0 24px ${hovered.glowColor}18`,
@@ -942,7 +942,7 @@ export default function PlanetMineralGlobe({
                 style={{
                   width: 13,
                   height: 13,
-                  borderRadius: "50%",
+                  borderRadius: 0,
                   border: `1px solid ${C.textDim}33`,
                   display: "flex",
                   alignItems: "center",
@@ -977,7 +977,7 @@ export default function PlanetMineralGlobe({
                 style={{
                   width: 44,
                   height: 44,
-                  borderRadius: "50%",
+                  borderRadius: 0,
                   border: `1px solid ${C.accentDim}`,
                   borderTop: `1px solid ${C.accent}`,
                   animation: "spin 1.2s linear infinite",
@@ -1001,8 +1001,8 @@ export default function PlanetMineralGlobe({
         {/* BOTTOM PANEL */}
         <aside
           style={{
-            flex: "0 0 48%",
-            minHeight: 260,
+            flex: "0 0 38%",
+            minHeight: 220,
             background: C.panel,
             borderTop: `1px solid ${C.border}`,
             display: "flex",
@@ -1105,7 +1105,7 @@ export default function PlanetMineralGlobe({
                     style={{
                       height: 2,
                       background: "rgba(255,255,255,0.05)",
-                      borderRadius: 1,
+                      borderRadius: 0,
                       overflow: "hidden",
                     }}
                   >
@@ -1114,7 +1114,7 @@ export default function PlanetMineralGlobe({
                         height: "100%",
                         width: `${selected.composition}%`,
                         background: `linear-gradient(90deg, ${selected.color}, ${selected.glowColor})`,
-                        borderRadius: 1,
+                        borderRadius: 0,
                         transition: "width 0.7s ease",
                         boxShadow: `0 0 8px ${selected.glowColor}77`,
                       }}
@@ -1162,7 +1162,7 @@ export default function PlanetMineralGlobe({
                       style={{
                         background: "rgba(61,139,255,0.04)",
                         border: `1px solid ${C.border}`,
-                        borderRadius: 5,
+                        borderRadius: 0,
                         padding: "7px 10px",
                       }}
                     >
@@ -1202,7 +1202,7 @@ export default function PlanetMineralGlobe({
                     fontSize: 8,
                     letterSpacing: 2.5,
                     cursor: "pointer",
-                    borderRadius: 4,
+                    borderRadius: 0,
                     fontFamily: C.mono,
                     textTransform: "uppercase",
                   }}
@@ -1241,7 +1241,14 @@ export default function PlanetMineralGlobe({
 
           {/* Breakdown list */}
           <div
-            style={{ flex: 1, minHeight: 140, overflowY: "hidden", padding: "14px 20px" }}
+            style={{
+              flex: 1,
+              minHeight: 0,
+              display: "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+              padding: "12px 20px 14px",
+            }}
           >
             <div
               style={{
@@ -1249,12 +1256,22 @@ export default function PlanetMineralGlobe({
                 fontFamily: C.mono,
                 color: C.textDim,
                 letterSpacing: 3,
-                marginBottom: 14,
+                marginBottom: 10,
                 textTransform: "uppercase",
+                flexShrink: 0,
               }}
             >
               Composition Breakdown
             </div>
+            <div
+              style={{
+                flex: 1,
+                minHeight: 0,
+                overflowY: "auto",
+                overflowX: "hidden",
+                paddingRight: 4,
+              }}
+            >
             {stats!
               .slice()
               .sort((a, b) => b.percentage - a.percentage)
@@ -1318,7 +1335,7 @@ export default function PlanetMineralGlobe({
                     style={{
                       height: 6,
                       background: "rgba(255,255,255,0.03)",
-                      borderRadius: 4,
+                      borderRadius: 0,
                       overflow: "hidden",
                     }}
                   >
@@ -1327,7 +1344,7 @@ export default function PlanetMineralGlobe({
                         height: "100%",
                         width: `${m.percentage}%`,
                         background: `linear-gradient(90deg, ${C.accent}, ${C.accentDim})`,
-                        borderRadius: 4,
+                        borderRadius: 0,
                         boxShadow: "none",
                         transition: "width 0.5s ease",
                       }}
@@ -1335,6 +1352,7 @@ export default function PlanetMineralGlobe({
                   </div>
                 </div>
               ))}
+            </div>
           </div>
 
           {/* Footer */}
@@ -1386,7 +1404,7 @@ export default function PlanetMineralGlobe({
         * { box-sizing: border-box; margin: 0; padding: 0; }
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(61,139,255,0.18); border-radius:2px; }
+        ::-webkit-scrollbar-thumb { background: rgba(61,139,255,0.18); border-radius:0; }
       `}</style>
     </div>
   );

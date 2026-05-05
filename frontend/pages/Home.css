@@ -83,7 +83,7 @@
 
 .nebula {
   position: absolute;
-  border-radius: 999px;
+  border-radius: 0;
   filter: blur(22px);
   pointer-events: none;
 }
@@ -114,7 +114,7 @@
   border: 1px solid rgba(125, 159, 255, 0.22);
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(8px);
-  border-radius: 20px;
+  border-radius: 0;
   padding: 2.4rem 2.1rem;
 }
 
@@ -154,7 +154,7 @@
   font-size: 0.86rem;
   color: #d8e9ff;
   padding: 0.45rem 0.85rem;
-  border-radius: 999px;
+  border-radius: 0;
   border: 1px solid rgba(151, 179, 255, 0.26);
   background: rgba(40, 69, 128, 0.26);
 }
@@ -169,7 +169,7 @@
   cursor: pointer;
   position: relative;
   z-index: 0;
-  border-radius: 10px;
+  border-radius: 0;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -198,7 +198,7 @@
   height: calc(100% + 4px);
   animation: glowing-button-85 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 @keyframes glowing-button-85 {
@@ -222,7 +222,7 @@
   background: #12306d;
   left: 0;
   top: 0;
-  border-radius: 10px;
+  border-radius: 0;
 }
 
 @keyframes drift {
