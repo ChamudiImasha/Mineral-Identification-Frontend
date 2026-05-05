@@ -680,7 +680,7 @@ export default function PlanetMineralGlobe({
             ref={containerRef}
             style={{
               position: "relative",
-              width: "min(100%, 62vmin, 72vh, 640px)",
+              width: "min(100%, 124vmin, 144vh, 1280px)",
               aspectRatio: "1 / 1",
               maxWidth: "100%",
               flexShrink: 0,
