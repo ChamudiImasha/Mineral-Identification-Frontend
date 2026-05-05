@@ -194,7 +194,7 @@ export default function PlanetMineralGlobe({
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(52, W / H, 0.1, 100);
-    camera.position.set(0, 0, 4.4);
+    camera.position.set(0, 0, 5.45);
     camRef.current = camera;
 
     const pivot = new THREE.Group();
@@ -654,49 +654,6 @@ export default function PlanetMineralGlobe({
         fontFamily: C.sans,
       }}
     >
-      {/* HEADER */}
-      <header
-        style={{
-          padding: "13px 28px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          zIndex: 10,
-          borderBottom: `1px solid ${C.border}`,
-          background: "rgba(3,7,15,0.88)",
-          backdropFilter: "blur(14px)",
-        }}
-      >
-        {/* <div style={{ display:"flex", gap:16, alignItems:"center" }}>
-          {file && (
-            <div style={{ fontSize:9.5, color:C.textMid, fontFamily:C.mono,
-              background:C.accentDim, padding:"4px 10px", borderRadius:0,
-              border:`1px solid ${C.border}` }}>
-              ◉ {file}
-            </div>
-          )}
-          <label style={{
-            padding:"6px 16px", border:`1px solid rgba(61,139,255,0.3)`,
-            color:C.accent, fontSize:10, letterSpacing:2, cursor:"pointer",
-            background:"rgba(61,139,255,0.06)", borderRadius:0,
-            textTransform:"uppercase", fontFamily:C.mono,
-          }}>
-            ↑ Upload Image
-            <input type="file" accept="image/*" style={{ display:"none" }}
-              onChange={(e) => setFile(e.target.files?.[0]?.name ?? null)} />
-          </label>
-          <div style={{ width:1, height:22, background:C.border }} />
-          <div style={{ textAlign:"right" }}>
-            <div style={{ fontSize:10.5, color:C.textMid, fontFamily:C.mono }}>
-              {MINERALS.length} minerals
-            </div>
-            <div style={{ fontSize:8, color:C.textDim, fontFamily:C.mono, marginTop:1 }}>
-              detected
-            </div>
-          </div>
-        </div> */}
-      </header>
-
       {/* BODY */}
       <div
         style={{
@@ -704,13 +661,31 @@ export default function PlanetMineralGlobe({
           display: "flex",
           flexDirection: "column",
           overflow: "hidden",
+          minHeight: 0,
         }}
       >
-        {/* Globe */}
+        {/* Square globe — caps height so the bottom list gets more vertical room */}
         <div
-          ref={containerRef}
-          style={{ flex: "1 1 auto", minHeight: 0, position: "relative" }}
+          style={{
+            flex: "0 0 auto",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            padding: "6px 10px 10px",
+            boxSizing: "border-box",
+          }}
         >
+          <div
+            ref={containerRef}
+            style={{
+              position: "relative",
+              width: "min(100%, 44vmin, 52vh, 420px)",
+              aspectRatio: "1 / 1",
+              maxWidth: "100%",
+              flexShrink: 0,
+            }}
+          >
           <div
             ref={mountRef}
             style={{ width: "100%", height: "100%", pointerEvents: "none" }}
@@ -996,13 +971,14 @@ export default function PlanetMineralGlobe({
               </div>
             </div>
           </div>
+          </div>
         </div>
 
         {/* BOTTOM PANEL */}
         <aside
           style={{
-            flex: "0 0 38%",
-            minHeight: 220,
+            flex: "1 1 auto",
+            minHeight: 0,
             background: C.panel,
             borderTop: `1px solid ${C.border}`,
             display: "flex",
@@ -1014,7 +990,7 @@ export default function PlanetMineralGlobe({
           <div
             style={{
               flex: "0 0 auto",
-              maxHeight: "46%",
+              maxHeight: "38%",
               overflowY: "hidden",
               padding: "18px 20px 16px",
               borderBottom: `1px solid ${C.border}`,

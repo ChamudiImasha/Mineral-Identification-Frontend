@@ -138,7 +138,7 @@
 
 .compact-globe-shell {
   flex: 1;
-  min-height: 640px;
+  min-height: 0;
   border-radius: 0;
   overflow: hidden;
 }
@@ -277,7 +277,7 @@
   }
 
   .compact-globe-shell {
-    height: 620px;
+    min-height: 320px;
   }
 
   .info-card {
@@ -322,7 +322,7 @@
   }
 
   .compact-globe-shell {
-    height: 500px;
+    min-height: 280px;
   }
 }
 
